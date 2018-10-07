@@ -22,6 +22,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
 
+    //加了一行注释
     Button loginBt;
     Button registBt;
     EditText usernameEt;
