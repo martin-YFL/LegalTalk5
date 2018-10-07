@@ -96,17 +96,10 @@ public class MainActivity extends BaseActivity {
         loginBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                login();
+               login();
             }
         });
 
-        //监听注册
-        registBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                regist();
-            }
-        });
 
 
         //监听选择注册
@@ -167,6 +160,18 @@ public class MainActivity extends BaseActivity {
      * 登录
      */
     public void login(){
+        Toast.makeText(context,"userName:"+usernameEt.getText().toString(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(context,"password:"+passwordEt.getText().toString(),Toast.LENGTH_SHORT).show();
+        //测试代码，管理员登录
+        if(usernameEt.getText().toString().equals("admin")
+                &&passwordEt.getText().toString().equals("admin")){
+            Intent intent = new Intent(context,MainPageActivity.class);
+            intent.putExtra("userTel",00000000);
+            intent.putExtra("userPassword","admin");
+            startActivity(intent);
+            this.finish();
+        }
+
         //合法性检查
         int uLength = usernameEt.getText().toString().length();
         int pLength = passwordEt.getText().toString().length();
@@ -206,7 +211,8 @@ public class MainActivity extends BaseActivity {
                 Toast.makeText(context, users.get(0).getUsername(), Toast.LENGTH_SHORT).show();
                 return;
             }
-        }else {
+        }
+        else {
             Toast.makeText(context,"用户不存在", Toast.LENGTH_SHORT).show();
             return;
         }
