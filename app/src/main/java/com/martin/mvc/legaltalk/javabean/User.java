@@ -1,4 +1,4 @@
-package com.martin.mvc.legaltalk;
+package com.martin.mvc.legaltalk.javabean;
 
 import org.litepal.crud.DataSupport;
 

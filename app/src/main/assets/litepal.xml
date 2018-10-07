@@ -5,6 +5,6 @@
     <version value = "1"></version>
 
     <list>
-        <mapping class="com.martin.mvc.legaltalk.User"></mapping>
+        <mapping class="com.martin.mvc.legaltalk.javabean.User"></mapping>
     </list>
 </litepal>

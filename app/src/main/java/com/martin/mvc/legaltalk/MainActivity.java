@@ -6,12 +6,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.martin.mvc.legaltalk.javabean.User;
+import com.martin.mvc.legaltalk.util.BaseActivity;
 
 import org.litepal.LitePal;
 import org.litepal.crud.DataSupport;
@@ -19,7 +21,7 @@ import org.litepal.crud.DataSupport;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
 
     Button loginBt;
@@ -61,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onPostResume() {
-        super.onPostResume();
+    protected void onResume() {
+        super.onResume();
         setFullScreen();
     }
 
@@ -112,19 +114,31 @@ public class MainActivity extends AppCompatActivity {
      * 注册选择 律师还是普通用户
      */
     private void goRegist() {
-       new AlertDialog.Builder(context).setSingleChoiceItems(goRegistItems, 0, new DialogInterface.OnClickListener() {
+       new AlertDialog.Builder(context).setItems(goRegistItems,
+               new DialogInterface.OnClickListener() {
            @Override
            public void onClick(DialogInterface dialogInterface, int i) {
+               Intent intent = new Intent(context,RegistActivity.class);
                switch (i){
                    case 0:
                        //进入用户注册
+//                       Toast.makeText(context,"you click : "+goRegistItems[0],
+//                               Toast.LENGTH_SHORT).show();
+                       intent.putExtra("user_kinds",goRegistItems[0]);
                        break;
                    case 1:
                        //进入律师注册
+//                       Toast.makeText(context,"you click : "+goRegistItems[1],
+//                               Toast.LENGTH_SHORT).show();
+                       intent.putExtra("user_kinds",goRegistItems[1]);
                        break;
                    default:
+//                       Toast.makeText(context,"you click : "+"nothing",
+//                               Toast.LENGTH_SHORT).show();
+                       intent = new Intent(context,MainPageActivity.class);
                        break;
                }
+               startActivity(intent);
            }
        }).create().show();
     }
