@@ -18,10 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegistActivity" />
-        <activity android:name=".MainPageActivity" >
-
-
-        </activity>
+        <activity android:name=".MainPageActivity"></activity>
+        <activity android:name=".ForgetPwdActivity"></activity>
     </application>
 
 </manifest>

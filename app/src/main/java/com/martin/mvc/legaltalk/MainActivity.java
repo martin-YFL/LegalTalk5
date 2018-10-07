@@ -4,10 +4,13 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.Checkable;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,8 +34,11 @@ public class MainActivity extends BaseActivity {
     EditText passwordEt;
     Context context;
     TextView goRegistTv;
+    SharedPreferences pref;
+    SharedPreferences.Editor prefEditor;
+    CheckBox rememberPwdCb;
     final String[] goRegistItems = new String[]{"用户注册","律师注册"};
-
+    final String SharedPreferenceName = "assets";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +88,7 @@ public class MainActivity extends BaseActivity {
         usernameEt = findViewById(R.id.usernameEt);
         passwordEt = findViewById(R.id.passwordEt);
         goRegistTv = findViewById(R.id.goRegistTv);
+        rememberPwdCb = findViewById(R.id.cb_remember_pwd);
 
         LitePal.getDatabase();
 
@@ -109,7 +116,18 @@ public class MainActivity extends BaseActivity {
                 goRegist();
             }
         });
+
+        //记住密码
+        pref = getSharedPreferences(SharedPreferenceName,MODE_PRIVATE);
+        Boolean rememberPwd = pref.getBoolean("rememberPwd",false);
+        if(rememberPwd){
+            usernameEt.setText(pref.getString("userName","null"));
+            passwordEt.setText(pref.getString("password","null"));
+        }
+        rememberPwdCb.setChecked(rememberPwd);
     }
+
+
 
     /**
      * 注册选择 律师还是普通用户
@@ -171,8 +189,17 @@ public class MainActivity extends BaseActivity {
                 if (users.get(0).getPassword().equals(passwordEt.getText().toString())) {
                     Toast.makeText(context, "登录成功，请稍后...", Toast.LENGTH_SHORT).show();
                     //跳转至用户信息界面
-                    Intent intent = new Intent(context, RegistActivity.class);
+                    Intent intent = new Intent(context,MainPageActivity.class);
+                    intent.putExtra("userTel",users.get(0).getTel());
+                    intent.putExtra("userPassword",users.get(0).getPassword());
                     startActivity(intent);
+                    //保存用户名密码
+                    if(rememberPwdCb.isChecked()){
+                        prefEditor = getSharedPreferences(SharedPreferenceName,MODE_PRIVATE).edit();
+                        prefEditor.putString("userName",users.get(0).getTel());
+                        prefEditor.putString("password",users.get(0).getPassword());
+                        prefEditor.apply();
+                    }
                     this.finish();
                 }
             }else {
