@@ -17,7 +17,7 @@ import com.martin.mvc.legaltalk.util.MainFragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainPageActivity extends BaseActivity implements View.OnClickListener{
+public class MainPageActivity extends BaseActivity implements View.OnClickListener {
 
     private FrameLayout main_foot_bar1, main_foot_bar2, main_foot_bar3, main_foot_bar4;
     private TextView text1, text11, text2, text22, text3, text33, text4, text44;
@@ -31,19 +31,19 @@ public class MainPageActivity extends BaseActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-    //初始化
-    initView();
-    initData();
+        //初始化
+        initView();
+        initData();
 
-    adapter = new MainFragmentPagerAdapter(getSupportFragmentManager(), list);
+        adapter = new MainFragmentPagerAdapter(getSupportFragmentManager(), list);
         viewPager.setAdapter(adapter);
 
         viewPager.setOffscreenPageLimit(3);//设置默认加载3个fragment页面
 
-    ViewPagerChange();//滑动viewpager更新UI
+        ViewPagerChange();//滑动viewpager更新UI
 
-    doClick();//点击
-}
+        doClick();//点击
+    }
 
     private void doClick() {
         main_foot_bar1.setOnClickListener(this);
@@ -74,21 +74,21 @@ public class MainPageActivity extends BaseActivity implements View.OnClickListen
     }
 
     private void initView() {
-        viewPager = (ViewPager) findViewById(R.id.main_viewpager);
+        viewPager = findViewById(R.id.main_viewpager);
 
-        text1 = (TextView) findViewById(R.id.main_foot_text1);
-        text11 = (TextView) findViewById(R.id.main_foot_text11);
-        text2 = (TextView) findViewById(R.id.main_foot_text2);
-        text22 = (TextView) findViewById(R.id.main_foot_text22);
-        text3 = (TextView) findViewById(R.id.main_foot_text3);
-        text33 = (TextView) findViewById(R.id.main_foot_text33);
-        text4 = (TextView) findViewById(R.id.main_foot_text4);
-        text44 = (TextView) findViewById(R.id.main_foot_text44);
+        text1 = findViewById(R.id.main_foot_text1);
+        text11 = findViewById(R.id.main_foot_text11);
+        text2 = findViewById(R.id.main_foot_text2);
+        text22 = findViewById(R.id.main_foot_text22);
+        text3 = findViewById(R.id.main_foot_text3);
+        text33 = findViewById(R.id.main_foot_text33);
+        text4 = findViewById(R.id.main_foot_text4);
+        text44 = findViewById(R.id.main_foot_text44);
 
-        main_foot_bar1 = (FrameLayout) findViewById(R.id.main_foot_bar1);
-        main_foot_bar2 = (FrameLayout) findViewById(R.id.main_foot_bar2);
-        main_foot_bar3 = (FrameLayout) findViewById(R.id.main_foot_bar3);
-        main_foot_bar4 = (FrameLayout) findViewById(R.id.main_foot_bar4);
+        main_foot_bar1 = findViewById(R.id.main_foot_bar1);
+        main_foot_bar2 = findViewById(R.id.main_foot_bar2);
+        main_foot_bar3 = findViewById(R.id.main_foot_bar3);
+        main_foot_bar4 = findViewById(R.id.main_foot_bar4);
 
     }
 
