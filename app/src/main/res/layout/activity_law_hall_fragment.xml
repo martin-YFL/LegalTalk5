@@ -3,19 +3,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.LawHallFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal">
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="@color/colorSelect">
 
+        <com.martin.mvc.legaltalk.util.EditText_Clear
+            android:id="@+id/law_hall_search_edittext"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="8dp"
+            android:gravity="start|center_vertical"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="客服"
+            android:gravity="center"
+            android:textSize="@dimen/text_mid"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:orientation="horizontal">
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="我要咨询"
+            android:gravity="center"
+            android:background="@color/colorUnSelect"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="打官司"
+            android:gravity="center"
+            android:background="@color/colorUnSelect"/>
 
     </LinearLayout>
 
@@ -35,7 +74,8 @@
             android:layout_marginTop="8dp"/>
 
         <ListView
-            android:id="@+id/main_select_lawyer_list"            android:layout_width="match_parent"
+            android:id="@+id/main_select_lawyer_list"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"></ListView>
     </LinearLayout>
 </LinearLayout>
