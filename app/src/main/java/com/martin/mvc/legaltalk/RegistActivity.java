@@ -2,9 +2,9 @@ package com.martin.mvc.legaltalk;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-import com.martin.mvc.legaltalk.util.BaseActivity;
+import com.martin.mvc.legaltalk.R;
+import com.martin.mvc.base_util.BaseActivity;
 
 public class RegistActivity extends BaseActivity {
 

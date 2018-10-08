@@ -1,18 +1,18 @@
 package com.martin.mvc.legaltalk;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-import com.martin.mvc.legaltalk.util.ICallBack;
-import com.martin.mvc.legaltalk.util.SearchView;
-import com.martin.mvc.legaltalk.util.bCallBack;
+import com.martin.mvc.base_util.BaseActivity;
+import com.martin.mvc.util.ICallBack;
+import com.martin.mvc.util.SearchView;
+import com.martin.mvc.util.bCallBack;
 
 
 /**
  * Created by Carson_Ho on 17/8/11.
  */
 
-public class SearchDemo extends AppCompatActivity {
+public class SearchDemo extends BaseActivity {
 
     // 1. 初始化搜索框变量
     private SearchView searchView;

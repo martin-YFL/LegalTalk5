@@ -7,12 +7,13 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.martin.mvc.legaltalk.fragment.LawHallFragment;
-import com.martin.mvc.legaltalk.fragment.MeFragment;
-import com.martin.mvc.legaltalk.fragment.NewsFragment;
-import com.martin.mvc.legaltalk.fragment.SearchLawyerFragment;
-import com.martin.mvc.legaltalk.util.BaseActivity;
-import com.martin.mvc.legaltalk.util.MainFragmentPagerAdapter;
+import com.martin.mvc.legaltalk.R;
+import com.martin.mvc.fragment.LawHallFragment;
+import com.martin.mvc.fragment.MeFragment;
+import com.martin.mvc.fragment.NewsFragment;
+import com.martin.mvc.fragment.SearchLawyerFragment;
+import com.martin.mvc.base_util.BaseActivity;
+import com.martin.mvc.adapter.MainFragmentPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -20,7 +20,7 @@
             android:padding="10dp"
             android:src="@drawable/back" />
 
-        <com.martin.mvc.legaltalk.util.EditText_Clear
+        <com.martin.mvc.util.EditText_Clear
             android:id="@+id/et_search"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
@@ -44,12 +44,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.martin.mvc.legaltalk.util.SearchListView
+            <com.martin.mvc.util.SearchListView
                 android:id="@+id/listView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </com.martin.mvc.legaltalk.util.SearchListView>
+            </com.martin.mvc.util.SearchListView>
 
             <TextView
                 android:id="@+id/tv_clear"

@@ -1,9 +1,11 @@
 package com.martin.mvc.legaltalk;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ForgetPwdActivity extends AppCompatActivity {
+import com.martin.mvc.legaltalk.R;
+import com.martin.mvc.base_util.BaseActivity;
+
+public class ForgetPwdActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
